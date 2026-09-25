@@ -1,0 +1,85 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Profile {
+  id          String   @id @default(cuid())
+  name        String
+  description String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  links       ProfessionalLink[]
+  skills      Skill[]
+  experiences Experience[]
+  projects    Project[]
+}
+
+model ProfessionalLink {
+  id        String  @id @default(cuid())
+  label     String
+  url       String
+  order     Int     @default(0)
+
+  profile   Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  profileId String
+
+  @@index([profileId])
+}
+
+model Skill {
+  id        String  @id @default(cuid())
+  name      String
+  category  String?
+  order     Int     @default(0)
+
+  profile   Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  profileId String
+
+  @@index([profileId])
+}
+
+model Experience {
+  id           String    @id @default(cuid())
+  company      String
+  position     String
+  startDate    DateTime
+  endDate      DateTime?
+  order        Int       @default(0)
+
+  achievements Achievement[]
+
+  profile      Profile   @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  profileId    String
+
+  @@index([profileId])
+}
+
+model Achievement {
+  id           String     @id @default(cuid())
+  text         String
+  order        Int        @default(0)
+
+  experience   Experience @relation(fields: [experienceId], references: [id], onDelete: Cascade)
+  experienceId String
+
+  @@index([experienceId])
+}
+
+model Project {
+  id          String  @id @default(cuid())
+  name        String
+  url         String?
+  description String?
+  order       Int     @default(0)
+
+  profile     Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  profileId   String
+
+  @@index([profileId])
+}
