@@ -1,0 +1,1 @@
+// ProfessionalLink GraphQL model — filled in M6

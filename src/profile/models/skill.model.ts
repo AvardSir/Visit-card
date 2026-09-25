@@ -1,0 +1,1 @@
+// Skill GraphQL model — filled in M6

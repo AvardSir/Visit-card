@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+*.tsbuildinfo
+
+# Env files (example и test — коммитим, остальное нет)
+.env
+.env.local
+.env.*.local
+
+# SQLite
+prisma/dev.db
+prisma/dev.db-journal
+prisma/test.db
+prisma/test.db-journal
+
+# Logs
+*.log
+npm-debug.log*
+
+# Coverage
+coverage/
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
