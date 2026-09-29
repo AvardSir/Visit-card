@@ -1,1 +1,10 @@
-// Achievement GraphQL model — filled in M6
+import { Field, ID, ObjectType } from '@nestjs/graphql';
+
+@ObjectType()
+export class Achievement {
+  @Field(() => ID)
+  id!: string;
+
+  @Field()
+  text!: string;
+}

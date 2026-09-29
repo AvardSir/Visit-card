@@ -1,1 +1,13 @@
-// Skill GraphQL model — filled in M6
+import { Field, ID, ObjectType } from '@nestjs/graphql';
+
+@ObjectType()
+export class Skill {
+  @Field(() => ID)
+  id!: string;
+
+  @Field()
+  name!: string;
+
+  @Field(() => String, { nullable: true })
+  category!: string | null;
+}
