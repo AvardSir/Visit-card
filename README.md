@@ -135,7 +135,8 @@ query {
 
 ## Скриншот Apollo Sandbox
 
-<img width="1280" height="616" alt="image" src="https://github.com/user-attachments/assets/50236eca-6577-4af3-b697-3cfc36144563" />
+<img width="1910" height="920" alt="image" src="https://github.com/user-attachments/assets/8e916a83-b8e2-4960-9b20-d5cdec129864" />
+
 
 ## Деплой на Render
 
