@@ -1,0 +1,35 @@
+# --- VCS / IDE ---
+.git
+.gitignore
+.vscode
+.idea
+
+# --- Артефакты сборки (пересобираются внутри образа) ---
+dist
+schema.gql
+coverage
+*.log
+
+# --- Зависимости (переустанавливаются через npm ci внутри образа) ---
+node_modules
+
+# --- SQLite: в образ не кладём, БД создаётся db push в рантайме ---
+prisma/*.db
+prisma/*.db-journal
+*.db
+*.db-journal
+
+# --- Секреты и env: в рантайме подаются через env_file/docker run -e ---
+.env
+.env.*
+
+# --- Тесты: в прод-образ не идут (tsconfig.build.json их и так исключает) ---
+test
+
+# --- Docker-файлы: в контексте образа не нужны ---
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# --- Документация ---
+README.md
