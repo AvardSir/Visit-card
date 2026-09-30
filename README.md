@@ -6,7 +6,7 @@ Backend-приложение «цифровая визитка»: один Graph
 
 ## 🔗 Live Demo
 
-- **Apollo Sandbox:** https://REPLACE_ME.onrender.com/graphql
+- **Apollo Sandbox:** https://visit-card-gyxw.onrender.com/graphql
 
 > Пример запроса и ответа — см. [GraphQL API](#graphql-api).
 
