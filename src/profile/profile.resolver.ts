@@ -31,6 +31,15 @@ export class ProfileResolver {
     return profile.experiences;
   }
 
+  @ResolveField(() => [Experience], {
+    name: 'experience',
+    description:
+      'Алиас для experiences — совместимость с целевым запросом из ТЗ',
+  })
+  experience(@Parent() profile: Profile): Experience[] {
+    return profile.experiences;
+  }
+
   @ResolveField(() => [Project])
   projects(@Parent() profile: Profile): Project[] {
     return profile.projects;

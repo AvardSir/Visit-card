@@ -52,6 +52,43 @@ async function main() {
       // experiences намеренно не создаём — у профиля нет опыта работы.
       // GraphQL вернёт experiences: [] (валидный ответ, §10).
 
+      experiences: {
+        create: [
+          {
+            id: 'exp-vibecall',
+            company: 'Self-employed',
+            position: 'Fullstack Developer (pet-проект)',
+            startDate: new Date('2026-07-23T00:00:00.000Z'),
+            endDate: new Date('2026-07-30T00:00:00.000Z'),
+            order: 0,
+            achievements: {
+              create: [
+                {
+                  id: 'ach-arch',
+                  text: 'Спроектировал архитектуру с разделением control plane (backend) и media plane (LiveKit Cloud)',
+                  order: 0,
+                },
+                {
+                  id: 'ach-grace',
+                  text: 'Реализовал управление комнатами с grace-period при отключении хоста',
+                  order: 10,
+                },
+                {
+                  id: 'ach-realtime',
+                  text: 'Настроил real-time синхронизацию через Socket.IO и интеграцию LiveKit Server SDK',
+                  order: 20,
+                },
+                {
+                  id: 'ach-deploy',
+                  text: 'Задеплоил frontend и backend на Render, медиа — через LiveKit Cloud',
+                  order: 30,
+                },
+              ],
+            },
+          },
+        ],
+      },
+
       projects: {
         create: [
           {
